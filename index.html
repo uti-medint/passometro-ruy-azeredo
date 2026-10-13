@@ -63,7 +63,7 @@ section.editor{flex:1;overflow-y:auto;padding:20px 28px 60px}
 .bed-title h2{margin:0;font-size:24px;letter-spacing:-.01em}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:14px}
 .card h3{margin:0 0 10px;font-size:16px}
-.grid4{display:grid;grid-template-columns:2fr 0.7fr 1.1fr 1.6fr;gap:12px}
+.grid4{display:grid;grid-template-columns:2fr 0.7fr 1.1fr;gap:12px}
 @media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}nav.beds{width:190px}}
 label.lbl{display:block;font-size:13px;color:var(--muted);margin-bottom:3px}
 input.txt,textarea.txt{width:100%;border:1px solid var(--line);border-radius:6px;padding:8px 10px;background:#fff;min-height:38px}
@@ -358,13 +358,13 @@ import { getFirestore, collection, doc, getDoc, onSnapshot, runTransaction, dele
 
 /* >>> COLE AQUI a configuração do SEU projeto Firebase (Configurações do projeto > Seus apps > Web > firebaseConfig) <<< */
 const firebaseConfig = {
-     apiKey: "AIzaSyBmVtsNgpkUuy6NfioQ9hgkd02ObBBSSeA",
-     authDomain: "passometro-ruy-azeredo.firebaseapp.com",
-     projectId: "passometro-ruy-azeredo",
-     storageBucket: "passometro-ruy-azeredo.firebasestorage.app",
-     messagingSenderId: "524851480012",
-     appId: "1:524851480012:web:9035060d5b0b02780e0969"
-   };
+  apiKey: "AIzaSyBmVtsNgpkUuy6NfioQ9hgkd02ObBBSSeA",
+  authDomain: "passometro-ruy-azeredo.firebaseapp.com",
+  projectId: "passometro-ruy-azeredo",
+  storageBucket: "passometro-ruy-azeredo.firebasestorage.app",
+  messagingSenderId: "524851480012",
+  appId: "1:524851480012:web:9035060d5b0b02780e0969"
+};
 
 try{
   const app=initializeApp(firebaseConfig), auth=getAuth(app), db=getFirestore(app);
@@ -395,7 +395,7 @@ try{
 /* ============ Dados padrão ============ */
 const STORE_KEY = "passometro_ruy_azeredo_v1";
 const LIST_NAMES = {
-  problemas:"Problemas / diagnósticos", atb:"Antibióticos", imagem:"Exames de imagem", plano:"Planos de saúde",
+  problemas:"Problemas / diagnósticos", atb:"Antibióticos", imagem:"Exames de imagem",
   sCVC:"Sítios de CVC", sCDL:"Sítios de CDL", sDreno:"Sítios de dreno",
   achado:"Achados de imagem", sCultura:"Sítios de cultura", germe:"Germes identificados", perfil:"Perfis de antibiograma", pend:"Pendências",
   sPA:"Sítios de punção arterial", procOutros:"Procedimentos (outros dispositivos)", sOutros:"Sítios (outros dispositivos)",
@@ -917,8 +917,7 @@ function renderEditor(){
   ed.append(el("div",{class:"card"},el("h3",{},"Identificação"),el("div",{class:"grid4"},
     f("Nome",el("input",{class:"txt",type:"text",value:b.nome,oninput:e=>{b.nome=e.target.value;afterChange();}})),
     f("Idade",el("input",{class:"txt",type:"text",inputmode:"numeric",value:b.idade,oninput:e=>{b.idade=e.target.value;afterChange();}})),
-    f("Admissão",el("input",{class:"txt",type:"date",value:b.admissao,oninput:e=>{b.admissao=e.target.value;afterChange();}})),
-    f("Plano de saúde",picker({key:"plano",single:true,placeholder:"Escolher plano",get:()=>b.plano,set:v=>b.plano=v}))
+    f("Admissão",el("input",{class:"txt",type:"date",value:b.admissao,oninput:e=>{b.admissao=e.target.value;afterChange();}}))
   ),precBox));
 
   const listCard=(title,key,prop,ph)=>el("div",{class:"card"},el("h3",{},title),
@@ -1305,7 +1304,7 @@ function docBody(st,logoSrc){
     const P=pend(b);
     const has=b.nome||precTxt(b)||b.problemas.length||A||K||I||C||B||G||R||dev||P;
     if(!has) return `<tr class="vago"><td class="b">${lab}</td><td colspan="${NC-1}">Vago</td></tr>`;
-    const id=`<span class="b">${esc(b.nome)||"—"}</span>${b.idade?"<br>"+esc(b.idade)+" anos":""}${b.admissao?"<br>Adm.: "+fmtDate(b.admissao,true):""}${b.plano?"<br>"+esc(b.plano):""}${precHtml(b)}${reg(b)}`;
+    const id=`<span class="b">${esc(b.nome)||"—"}</span>${b.idade?"<br>"+esc(b.idade)+" anos":""}${b.admissao?"<br>Adm.: "+fmtDate(b.admissao,true):""}${precHtml(b)}${reg(b)}`;
     const c3=(b.problemas.length?sl("PROBLEMAS",true)+list(b.problemas):"")+(dev?sl("DISPOSITIVOS",!b.problemas.length)+dev:"")+(P?sl("PENDÊNCIAS",!b.problemas.length&&!dev)+P:"");
     const c4=(A?sl("ANTIBIÓTICOS",true)+A:"")+(K?sl("CULTURAS",!A)+K:"")+(I?sl("IMAGEM",!A&&!K)+I:"");
     const c6=(B?sl("BALANÇO HÍDRICO / DIURÉTICOS",true)+B:"")+(G?sl("GESTÃO DE LEITO",!B)+G:"")+(R?sl("CIRURGIA CARDÍACA",!B&&!G)+R:"");
