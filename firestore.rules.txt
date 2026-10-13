@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Só entra quem está logado E cujo e-mail está na lista config/acesso (campo "emails")
+    function autorizado() {
+      return request.auth != null
+        && request.auth.token.email in get(/databases/$(database)/documents/config/acesso).data.emails;
+    }
+
+    match /parts/{part} {
+      allow read, write: if autorizado();
+    }
+
+    match /config/{doc} {
+      allow read: if autorizado();
+      allow write: if false;   // a lista de e-mails só é editada pelo console do Firebase
+    }
+  }
+}
