@@ -358,13 +358,13 @@ import { getFirestore, collection, doc, getDoc, onSnapshot, runTransaction, dele
 
 /* >>> COLE AQUI a configuração do SEU projeto Firebase (Configurações do projeto > Seus apps > Web > firebaseConfig) <<< */
 const firebaseConfig = {
-  apiKey: "AIzaSyBmVtsNgpkUuy6NfioQ9hgkd02ObBBSSeA",
-  authDomain: "passometro-ruy-azeredo.firebaseapp.com",
-  projectId: "passometro-ruy-azeredo",
-  storageBucket: "passometro-ruy-azeredo.firebasestorage.app",
-  messagingSenderId: "524851480012",
-  appId: "1:524851480012:web:9035060d5b0b02780e0969"
-};
+     apiKey: "AIzaSyBmVtsNgpkUuy6NfioQ9hgkd02ObBBSSeA",
+     authDomain: "passometro-ruy-azeredo.firebaseapp.com",
+     projectId: "passometro-ruy-azeredo",
+     storageBucket: "passometro-ruy-azeredo.firebasestorage.app",
+     messagingSenderId: "524851480012",
+     appId: "1:524851480012:web:9035060d5b0b02780e0969"
+   };
 
 try{
   const app=initializeApp(firebaseConfig), auth=getAuth(app), db=getFirestore(app);
