@@ -209,6 +209,12 @@ textarea.txt.mini{min-height:46px}
 .cc-tag.warn{background:var(--danger);color:#fff}
 .cc-tag.atb{background:var(--atb-soft);color:var(--atb)}
 .cc-l{font-size:13px}
+.cc-prob{display:flex;flex-wrap:wrap;gap:4px;margin:2px 0}
+.cc-pb{font-size:12.5px;font-weight:700;color:#12365a;background:#e4edf5;border-left:3px solid #1f4e79;border-radius:6px;padding:2px 7px;line-height:1.3}
+.cc.branca .cc-pb{border-left-color:#56646f}
+.cc-pb.mais{background:#eef2f5;color:var(--muted);border-left-color:#c3ccd3}
+.cc.big .cc-prob{gap:6px;margin:4px 0}
+.cc.big .cc-pb{font-size:17px;padding:5px 10px;border-left-width:5px}
 .cc-alta{margin-top:auto;font-size:13px;font-weight:700;color:#1f4e79}
 .ctiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:6px 0 14px}
 .ct{background:#fff;border:1px solid var(--line);border-top:5px solid #1f4e79;border-radius:12px;padding:12px 14px}
@@ -229,6 +235,75 @@ textarea.txt.mini{min-height:46px}
 .ctab{width:100%;border-collapse:collapse;font-size:14px}
 .ctab th,.ctab td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left}
 .ctab td.cpend{color:var(--atb);font-weight:700}
+
+/* pendências (caixa usada no leito, no painel e na gestão) */
+.pbox{background:#fff8e1;border:1.5px solid #efcf73;border-radius:12px;padding:10px 12px}
+.pbox-h{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:800;font-size:15px;color:#6b4a00;margin-bottom:6px}
+.pbox-n{font-size:12.5px;font-weight:700;color:#7a6a40;background:#f3e6bd;border-radius:10px;padding:2px 9px}
+.pbox-n.on{background:#a8470a;color:#fff}
+.pbox-n.urg{background:var(--danger)}
+.pbox .pend-item{margin-top:6px}
+.pend-item.urg{border-color:var(--danger);background:#fdecea}
+.pend-item.urg .pend-t{color:var(--danger);font-weight:700}
+.pend-urg{width:32px;height:32px;flex:none;border:1.5px solid var(--line);border-radius:8px;background:#fff;font-weight:900;color:var(--muted);padding:0}
+.pend-urg.on{background:var(--danger);border-color:var(--danger);color:#fff}
+.pbox-ver{border:none;background:none;color:#6b4a00;text-decoration:underline;font-size:13px;padding:6px 0 0}
+.pbox-add{display:block;width:100%;margin-top:8px;border-style:dashed;border-color:#d9b44a;background:#fffdf5;font-weight:700;color:#6b4a00}
+.pbox.compact{padding:7px 8px}
+.pbox.compact .pbox-h{font-size:13px}
+.pbox.compact .pend-item{padding:4px 6px;gap:6px}
+.pbox.compact .pend-t{font-size:13px}
+.pbox.compact .pend-chk,.pbox.compact .pend-urg{width:28px;height:28px;font-size:14px}
+.pbox.compact .pbox-add{padding:5px;font-size:13px}
+.pbox.big{padding:12px 14px}
+.pbox.big .pbox-h{font-size:18px}
+.pbox.big .pend-item{padding:10px 10px;gap:12px}
+.pbox.big .pend-t{font-size:18px}
+.pbox.big .pend-chk{width:46px;height:46px;font-size:24px;border-radius:10px}
+.pbox.big .pend-urg{width:42px;height:42px;font-size:20px}
+.pbox.big .pbox-add{min-height:52px;font-size:17px}
+.psug{display:flex;flex-wrap:wrap;gap:8px}
+.psug-b{border:1.5px solid #e2cf96;background:#fffdf5;border-radius:18px;padding:8px 14px;font-size:15px;color:#4a3a10}
+.psug-b:hover{background:#fff3cf}
+.tog.urgon{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn.pend-quick{background:#fff8e1;border-color:#d9b44a;color:#6b4a00;font-weight:700}
+.toast.undo{display:flex;align-items:center;gap:14px}
+.toast.undo button{border:none;background:none;color:#ffd93b;font-weight:800;font-size:15px;text-decoration:underline;padding:4px}
+.fab{display:none;position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;border:none;border-radius:30px;padding:15px 22px;background:#a8470a;color:#fff;font-weight:800;font-size:17px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+@media(max-width:700px){ body.m-ed .fab{display:block} }
+/* painel: modo um por vez (flashcard) */
+.cseg-sp{flex:1}
+.cc{position:relative}
+.cc .pbox{margin-top:4px}
+.cc-open{margin-top:6px;font-weight:700}
+.fstrip{display:flex;gap:6px;overflow-x:auto;padding:6px 2px 8px;-webkit-overflow-scrolling:touch}
+.fstrip button{flex:none;min-width:48px;height:42px;padding:0 10px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-weight:700;color:var(--ink)}
+.fstrip button.azul{border-bottom:4px solid #1565b8}.fstrip button.branca{border-bottom:4px solid #56646f}
+.fstrip button.on{background:#1f4e79;border-color:#1f4e79;color:#fff}
+.fstrip button.urg:not(.on){color:var(--danger);border-color:var(--danger)}
+.fcount{font-size:14px;color:var(--muted);font-weight:600;margin:0 0 8px}
+.cc.big{max-width:760px;margin:0 auto;padding:16px 18px;gap:8px;border-top-width:8px;min-height:0}
+.cc.big .cc-h{font-size:16px}
+.cc.big .cc-nome{font-size:26px}
+.cc.big .cc-sub{font-size:16px}
+.cc.big .cc-tag{font-size:14px;padding:4px 10px}
+.cc.big .cc-l,.cc.big .cc-alta{font-size:16px}
+.cc.big .cc-open{min-height:50px;font-size:16px}
+.fnav{position:sticky;bottom:0;display:flex;gap:10px;max-width:760px;margin:12px auto 0;padding:10px 0 calc(10px + env(safe-area-inset-bottom));background:var(--bg)}
+.fnav .btn{flex:1;min-height:54px;font-size:18px;font-weight:700}
+.ct.urg{border-top-color:var(--danger)}.ct.urg .ct-v{color:var(--danger)}
+.cpend{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.cpend-i{display:flex;flex-direction:column;gap:6px}
+.cpend-i li{list-style:none}
+.ctab-w{overflow-x:auto}
+@media(max-width:700px){
+  #coord header.top h1{font-size:17px}
+  .btn.pend-quick{display:none}
+  .toast{bottom:calc(96px + env(safe-area-inset-bottom))}
+  .cc.big .cc-alta{margin-top:0}
+  .cwrap{padding:10px 10px 30px}
+  .cseg .tog.sm,#cTabs .tog.sm{padding:8px 12px;font-size:14px}
+}
 
 /* impressão */
 #printArea{display:none}
@@ -334,6 +409,7 @@ textarea.txt.mini{min-height:46px}
     <nav class="beds" id="nav"></nav>
     <section class="editor"><div class="editor-inner" id="editor"></div></section>
   </main>
+  <button type="button" class="fab" id="fabPend">+ Pendência</button>
 </div>
 <div id="coord" hidden>
   <header class="top">
@@ -438,7 +514,7 @@ const SVCS=["azul","branca"];
 const isSvc=v=>v==="azul"||v==="branca";
 const svcOfBedId=id=>String(id).charAt(0)==="A"?"azul":"branca";
 document.title="Passômetro – "+CFG.unidade;
-const VERSAO="2.0";
+const VERSAO="2.1";
 /* Usuários: nomes dos médicos e coordenadores vêm do documento config/acesso do Firebase
    (campo "medicos": ["maria | Dra. Maria Souza", …] e campo "coordenadores": ["joao", …]). */
 const USERS={nomes:{},coord:[],login:"",local:false};
@@ -884,6 +960,7 @@ function renderEditor(){
   // título
   const title=el("div",{class:"bed-title"},el("button",{class:"btn m-only",type:"button",onclick:()=>{ document.body.classList.remove("m-ed"); renderNav(); }},"← Leitos"),el("h2",{},bedLabel(b)));
   title.append(el("span",{class:"spacer",style:"flex:1"}),
+    el("button",{class:"btn small pend-quick",type:"button",onclick:()=>pendAddModal(b,()=>{})},"+ Pendência"),
     ...(bedHasPatient(b)?[el("button",{class:"btn small",type:"button",onclick:()=>transferModal(b)},"Transferir de leito")]:[]),
     el("button",{class:"btn small danger",onclick:()=>{
       if(confirm(`Limpar todos os dados do ${bedLabel(b)} da ${CFG.utis[S.svc].nome}? Use na alta ou saída do paciente.`)){
@@ -1171,19 +1248,12 @@ function renderEditor(){
     renderCir();
   }
 
-  /* ---------- Pendências (tocar marca como resolvida; a resolvida fica riscada e continua na impressão) ---------- */
-  const pendCard=el("div",{class:"card"}); ed.append(pendCard);
+  /* ---------- Pendências (quadrado risca; "!" marca urgente; a resolvida fica riscada e continua na impressão) ---------- */
+  const pendCard=el("div",{class:"card",id:"pendCard"}); ed.append(pendCard);
   function renderPend(){
-    pendCard.innerHTML=""; pendCard.append(el("h3",{},"Pendências"));
-    pendCard.append(picker({key:"pend",placeholder:"Clique para escolher uma pendência ou digite uma nova",get:()=>[],
-      set:a=>{ a.forEach(t=>{ if(t&&!b.pend.some(x=>norm(x.t)===norm(t)&&!x.ok)) b.pend.push({t,ok:false}); }); setTimeout(renderPend,0); }}));
-    if(!b.pend.length){ pendCard.append(el("p",{class:"hint",style:"margin:8px 0 0"},"Nenhuma pendência.")); return; }
-    const lst=el("div",{class:"pend-list"});
-    b.pend.forEach((x,i)=>lst.append(el("div",{class:"pend-item"+(x.ok?" ok":"")},
-      el("button",{type:"button",class:"pend-chk","aria-pressed":!!x.ok,title:x.ok?"Marcar como aberta":"Marcar como resolvida",onclick:()=>{ x.ok=!x.ok; afterChange(); renderPend(); }},x.ok?"✔":""),
-      el("span",{class:"pend-t"},x.t),
-      el("button",{class:"x-btn",type:"button","aria-label":"Apagar pendência",onclick:()=>{ b.pend.splice(i,1); afterChange(); renderPend(); }},"×"))));
-    pendCard.append(lst,el("p",{class:"hint",style:"margin:8px 0 0"},"Toque no quadrado para marcar como resolvida. A resolvida fica riscada e continua na impressão; use × para apagar."));
+    pendCard.innerHTML="";
+    pendCard.append(pendBox(b,{del:true,re:renderPend}),
+      el("p",{class:"hint",style:"margin:8px 0 0"},"Quadrado: marca como resolvida (fica riscada e continua na impressão). \"!\": urgente. ×: apaga."));
   }
   renderPend();
 
@@ -1292,7 +1362,7 @@ function docBody(st,logoSrc){
     if(R.termos) o.push(`<div class="atb">Termos assinados: ${sn(R.termos)}</div>`);
     return o.join("");
   };
-  const pend=b=>(b.pend||[]).map(x=>x.ok?`<div class="atb pok">✔ <s>${esc(x.t)}</s></div>`:`<div class="atb">☐ ${esc(x.t)}</div>`).join("");
+  const pend=b=>pendSorted(b).map(({x})=>x.ok?`<div class="atb pok">✔ <s>${esc(x.t)}</s></div>`:(x.urg?`<div class="atb"><b>☐ URGENTE: ${esc(x.t)}</b></div>`:`<div class="atb">☐ ${esc(x.t)}</div>`)).join("");
   const reg=b=>b.upd?`<div class="upd">Atualizado: ${esc(b.resp||"—")}<br>${new Date(b.upd).toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}</div>`:"";
   const NC=6;
   const isoDoc=b=>{ const u=CFG.utis[st.svc]; return ((u&&u.isolamento)||[]).includes(parseInt(String(b.id).slice(1),10)); };
@@ -1524,23 +1594,107 @@ function histModal(){
   draw(); openModal("Histórico de plantões",body);
 }
 
-/* ============ Área do coordenador: painel dos leitos (tablet) e gestão das duas UTIs ============ */
-const CO={tab:"painel",uti:"ambas"};
+/* ============ Pendências: caixa reutilizada no leito, no painel do coordenador e na gestão ============ */
+/* item: {t:texto, ok:resolvida, urg:urgente}. Ordem: urgentes abertas, abertas, resolvidas. */
+function touchBed(b){
+  if(isSvc(view)&&S&&S.beds.includes(b)&&b.id===selected){ afterChange(); return; }
+  if((b.nome||b.problemas.length)&&!b.pid) b.pid=uid();
+  b.upd=Date.now(); b.resp=meuNome(); save();
+}
+function toastUndo(msg,fn){
+  document.querySelectorAll(".toast.undo").forEach(t=>t.remove());
+  const t=el("div",{class:"toast undo"},msg,el("button",{type:"button",onclick:()=>{ t.remove(); fn(); }},"Desfazer"));
+  document.body.append(t); setTimeout(()=>t.remove(),5000);
+}
+function pendSorted(b){
+  return b.pend.map((x,i)=>({x,i})).sort((p,q)=>((p.x.ok?1:0)-(q.x.ok?1:0))||((!q.x.ok&&q.x.urg?1:0)-(!p.x.ok&&p.x.urg?1:0))||(p.i-q.i));
+}
+const PEND_VER={};      /* leitos com as resolvidas abertas no painel */
+function pendBox(b,o){
+  o=o||{}; const re=o.re||(()=>{});
+  const ab=b.pend.filter(x=>!x.ok), urg=ab.filter(x=>x.urg).length;
+  const box=el("div",{class:"pbox"+(o.big?" big":"")+(o.compact?" compact":"")});
+  box.append(el("div",{class:"pbox-h"},el("span",{},"Pendências"),
+    el("span",{class:"pbox-n"+(ab.length?" on":"")+(urg?" urg":"")},ab.length?(ab.length+" aberta"+(ab.length>1?"s":"")+(urg?" · "+urg+" urgente"+(urg>1?"s":""):"")):"nenhuma aberta")));
+  let lista=pendSorted(b); const res=lista.filter(p=>p.x.ok);
+  const esconde=o.hideDone&&!PEND_VER[b.id];
+  if(esconde) lista=lista.filter(p=>!p.x.ok);
+  lista.forEach(({x,i})=>box.append(el("div",{class:"pend-item"+(x.ok?" ok":"")+(x.urg&&!x.ok?" urg":"")},
+    el("button",{type:"button",class:"pend-chk","aria-pressed":!!x.ok,"aria-label":x.ok?"Reabrir pendência":"Marcar como resolvida",
+      onclick:()=>{ x.ok=!x.ok; touchBed(b); re(); if(x.ok) toastUndo("Pendência riscada",()=>{ x.ok=false; touchBed(b); re(); }); }},x.ok?"✔":""),
+    el("span",{class:"pend-t"},(x.urg&&!x.ok?"URGENTE · ":"")+x.t),
+    x.ok?null:el("button",{type:"button",class:"pend-urg"+(x.urg?" on":""),"aria-pressed":!!x.urg,title:x.urg?"Tirar urgência":"Marcar como urgente",
+      onclick:()=>{ x.urg=!x.urg; touchBed(b); re(); }},"!"),
+    o.del?el("button",{class:"x-btn",type:"button","aria-label":"Apagar pendência",onclick:()=>{
+      const cp=b.pend.slice(); b.pend.splice(i,1); touchBed(b); re(); toastUndo("Pendência apagada",()=>{ b.pend=cp; touchBed(b); re(); }); }},"×"):null)));
+  if(o.hideDone&&res.length) box.append(el("button",{type:"button",class:"pbox-ver",onclick:()=>{ PEND_VER[b.id]=!PEND_VER[b.id]; re(); }},
+    PEND_VER[b.id]?"Esconder resolvidas":"Ver "+res.length+" resolvida"+(res.length>1?"s":"")));
+  box.append(el("button",{type:"button",class:"btn pbox-add",onclick:()=>pendAddModal(b,re)},"+ Nova pendência"));
+  return box;
+}
+/* janela rápida para acrescentar pendência (leito, painel e celular): campo de texto + sugestões em botões grandes */
+function pendAddModal(b,re){
+  let urg=false, close;
+  const inp=el("input",{class:"txt",type:"text",placeholder:"Digite a pendência ou toque numa sugestão abaixo",autocomplete:"off","aria-label":"Pendência"});
+  const sug=el("div",{class:"psug"});
+  const urgBtn=el("button",{type:"button",class:"tog",onclick:()=>{ urg=!urg; urgBtn.className="tog"+(urg?" on urgon":""); urgBtn.textContent=(urg?"✔ ":"")+"! Urgente"; }},"! Urgente");
+  const drawSug=()=>{
+    sug.innerHTML=""; const q=norm(inp.value);
+    const abertas=b.pend.filter(x=>!x.ok).map(x=>norm(x.t));
+    const L=SHARED.lists.pend.filter(x=>!abertas.includes(norm(x))&&(!q||norm(x).includes(q))).slice(0,16);
+    L.forEach(x=>sug.append(el("button",{type:"button",class:"psug-b",onclick:()=>{ inp.value=x; drawSug(); inp.focus(); }},x)));
+    if(!L.length) sug.append(el("span",{class:"hint",style:"margin:0"},q?"Texto novo: será adicionado como digitado.":"Sem sugestões."));
+  };
+  inp.addEventListener("input",drawSug);
+  inp.addEventListener("keydown",e=>{ if(e.key==="Enter"){ e.preventDefault(); add(true); } });
+  const add=(fechar)=>{
+    const t=learn("pend",inp.value); if(!t){ toast("Digite ou escolha a pendência"); inp.focus(); return; }
+    b.pend.push({t,ok:false,urg}); touchBed(b); toast("Pendência adicionada"+(urg?" (urgente)":""));
+    if(fechar){ close(); re(); }
+    else { inp.value=""; urg=false; urgBtn.className="tog"; urgBtn.textContent="! Urgente"; drawSug(); re(); inp.focus(); }
+  };
+  drawSug();
+  const body=el("div",{class:"padd"},
+    el("p",{class:"hint"},bedFull(b)+(b.nome?" · "+b.nome:"")),
+    inp,
+    el("div",{class:"q-row"},urgBtn,el("span",{class:"hint",style:"margin:0"},"Urgente fica em vermelho e vai para o topo.")),
+    el("div",{class:"q-row"},
+      el("button",{class:"btn primary",type:"button",style:"min-height:48px;padding:8px 22px;font-size:16px",onclick:()=>add(true)},"Adicionar"),
+      el("button",{class:"btn",type:"button",style:"min-height:48px",onclick:()=>add(false)},"Adicionar e incluir outra")),
+    el("div",{class:"lbl",style:"margin:14px 0 6px"},"Sugestões"),sug);
+  close=openModal("Nova pendência",body);
+  setTimeout(()=>inp.focus(),50);
+}
+
+/* ============ Área do coordenador: painel dos leitos (grade ou um por vez) e gestão das duas UTIs ============ */
+const CO={tab:"painel",uti:"ambas",modo:"grade",cur:null};
+const isPhone=()=>window.matchMedia("(max-width:700px)").matches;
 function diasUti(b){ return b.admissao?daysSince(b.admissao,todayISO()):null; }
 function abrirLeito(id){
   const k=svcOfBedId(id); SEL[k]=id; showView(k); selected=id; document.body.classList.add("m-ed"); renderNav(); renderEditor();
 }
 function altaLbl(v){ return {"24h":"24 h","48h":"48 h","72h":"72 h",ind:"Indefinida"}[v]||""; }
-function coordCard(b){
-  const k=svcOfBedId(b.id), u=CFG.utis[k];
-  const head=el("div",{class:"cc-h"},el("b",{},"Leito "+String(bedNum(b)).padStart(2,"0")),
-    isoBed(b)?el("span",{class:"cc-tag iso"},"Isolamento"):null,
-    CO.uti==="ambas"?null:null);
-  const card=el("button",{type:"button",class:"cc "+k+(bedHasPatient(b)?"":" vago"),onclick:()=>abrirLeito(b.id)},head);
+function coordBeds(){ return SVCS.filter(k=>CO.uti==="ambas"||CO.uti===k).flatMap(k=>SV[k].beds); }
+function nomeCurto(b){ return (CO.uti==="ambas"?CFG.utis[svcOfBedId(b.id)].nome.replace("UTI ","")+" ":"")+String(bedNum(b)).padStart(2,"0"); }
+/* cartão de um paciente: compacto na grade, grande no modo "um por vez" */
+function coordCard(b,big){
+  const k=svcOfBedId(b.id);
+  const card=el("div",{class:"cc "+k+(big?" big":"")+(bedHasPatient(b)?"":" vago")});
+  card.append(el("div",{class:"cc-h"},el("b",{},(big?CFG.utis[k].nome+" · ":"")+"Leito "+String(bedNum(b)).padStart(2,"0")),
+    isoBed(b)?el("span",{class:"cc-tag iso"},"Isolamento"):null));
   if(!bedHasPatient(b)){ card.append(el("div",{class:"cc-vago"},"Vago")); return card; }
   const d=diasUti(b);
   card.append(el("div",{class:"cc-nome"},b.nome||"(sem nome)"),
     el("div",{class:"cc-sub"},[b.idade?b.idade+" anos":"",d&&d>0?"D"+d+" de UTI":""].filter(Boolean).join(" · ")));
+  if(b.problemas.length){   /* problemas em destaque, logo abaixo do nome */
+    const MAX=big?99:3, pr=b.problemas.slice(0,MAX);
+    card.append(el("div",{class:"cc-prob"},...pr.map(x=>el("span",{class:"cc-pb"},x)),
+      b.problemas.length>MAX?el("span",{class:"cc-pb mais"},"+"+(b.problemas.length-MAX)):null));
+  }
+  if(big){   /* no modo um por vez, as pendências vêm logo abaixo do nome */
+    if(b.gest.alta) card.append(el("div",{class:"cc-alta"},"Alta prevista: "+altaLbl(b.gest.alta)));
+    card.append(pendBox(b,{big:true,hideDone:true,re:renderCoord}));
+  }
   const tags=el("div",{class:"cc-tags"});
   if(precTxt(b)) tags.append(el("span",{class:"cc-tag prec"},"⚠ "+precTxt(b)));
   const al=devAlerts(b,todayISO()); if(al.length) tags.append(el("span",{class:"cc-tag warn"},"⚠ "+al.map(x=>x.l+" D"+x.d).join(", ")));
@@ -1555,64 +1709,88 @@ function coordCard(b){
   const t=bhTotal(b.bh);
   if(t.ok&&!t.vazio){ const ac=bhAcum(b);
     card.append(el("div",{class:"cc-l"},"BH ",el("b",{},fmtMl(t.n)),b.bh.parcial?" (parcial)":"",ac.dias>=2?" · acum. "+ac.dias+"d "+fmtMl(ac.n):"")); }
-  const ab=b.pend.filter(x=>!x.ok);
-  if(ab.length) card.append(el("div",{class:"cc-l"},el("b",{},ab.length+" pendência"+(ab.length>1?"s":"")),": "+ab.slice(0,2).map(x=>x.t).join("; ")+(ab.length>2?"…":"")));
-  if(b.gest.alta) card.append(el("div",{class:"cc-alta"},"Alta prevista: "+altaLbl(b.gest.alta)));
+  if(!big){
+    if(b.gest.alta) card.append(el("div",{class:"cc-alta"},"Alta prevista: "+altaLbl(b.gest.alta)));
+    card.append(pendBox(b,{compact:true,hideDone:true,re:renderCoord}));
+  }
+  card.append(el("button",{type:"button",class:"btn cc-open",onclick:()=>abrirLeito(b.id)},big?"Abrir passômetro do leito ›":"Abrir leito ›"));
   return card;
 }
-function coordPainel(body){
-  const f=el("div",{class:"cseg"},...[["ambas","As duas UTIs"],["azul","UTI Azul"],["branca","UTI Branca"]].map(([k,l])=>seg(l,CO.uti===k,()=>{ CO.uti=k; renderCoord(); })));
-  body.append(f);
+function coordGrade(body){
   SVCS.filter(k=>CO.uti==="ambas"||CO.uti===k).forEach(k=>{
     const st=SV[k], oc=st.beds.filter(bedHasPatient).length;
     body.append(el("h2",{class:"c-h2 "+k},CFG.utis[k].nome,el("span",{class:"c-n"},oc+" de "+st.beds.length+" leitos ocupados")),
-      el("div",{class:"cgrid"},...st.beds.map(coordCard)));
+      el("div",{class:"cgrid"},...st.beds.map(b=>coordCard(b,false))));
   });
+}
+/* um paciente por tela (flashcard): só leitos ocupados; desliza com o dedo ou pelos botões */
+function coordFlash(body){
+  const todos=coordBeds(), occ=todos.filter(bedHasPatient);
+  if(!occ.length){ body.append(el("p",{class:"hint",style:"font-size:16px;margin-top:20px"},"Nenhum paciente internado nesta seleção.")); return; }
+  let i=occ.findIndex(b=>b.id===CO.cur); if(i<0) i=0; CO.cur=occ[i].id;
+  const ir=n=>{ CO.cur=occ[(n+occ.length)%occ.length].id; renderCoord(); const w=document.querySelector(".cwrap"); if(w) w.scrollTop=0; };
+  body.append(el("div",{class:"fstrip"},...occ.map(b=>{ const u=b.pend.some(x=>!x.ok&&x.urg);
+    return el("button",{type:"button",class:(b.id===CO.cur?"on ":"")+svcOfBedId(b.id)+(u?" urg":""),title:bedFull(b)+(u?" · pendência urgente":""),onclick:()=>{ CO.cur=b.id; renderCoord(); }},nomeCurto(b)+(u?" !":"")); })));
+  body.append(el("div",{class:"fcount"},(i+1)+" de "+occ.length+" pacientes"));
+  const card=coordCard(occ[i],true);
+  let x0=null,y0=null;
+  card.addEventListener("touchstart",e=>{ x0=e.touches[0].clientX; y0=e.touches[0].clientY; },{passive:true});
+  card.addEventListener("touchend",e=>{ if(x0==null) return; const dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0; x0=null;
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5) ir(dx<0?i+1:i-1); },{passive:true});
+  body.append(card,el("div",{class:"fnav"},
+    el("button",{type:"button",class:"btn",onclick:()=>ir(i-1)},"‹ Anterior"),
+    el("button",{type:"button",class:"btn primary",onclick:()=>ir(i+1)},"Próximo ›")));
+}
+function coordPainel(body){
+  const ctr=el("div",{class:"cseg"},...[["ambas","As duas UTIs"],["azul","UTI Azul"],["branca","UTI Branca"]].map(([k,l])=>seg(l,CO.uti===k,()=>{ CO.uti=k; renderCoord(); })));
+  if(!isPhone()) ctr.append(el("span",{class:"cseg-sp"}),...[["grade","Grade"],["um","Um por vez"]].map(([k,l])=>seg(l,CO.modo===k,()=>{ CO.modo=k; renderCoord(); })));
+  body.append(ctr);
+  if(isPhone()||CO.modo==="um") coordFlash(body); else coordGrade(body);
 }
 function coordGestao(body){
   const all=allBeds(), oc=all.filter(bedHasPatient), nm=b=>CFG.utis[svcOfBedId(b.id)].nome.replace("UTI ","")+" "+String(bedNum(b)).padStart(2,"0");
   const tile=(t,v,s,cls)=>el("div",{class:"ct "+(cls||"")},el("div",{class:"ct-t"},t),el("div",{class:"ct-v"},v),s?el("div",{class:"ct-s"},s):null);
+  const nAb=oc.reduce((n,b)=>n+b.pend.filter(x=>!x.ok).length,0), nUrg=oc.reduce((n,b)=>n+b.pend.filter(x=>!x.ok&&x.urg).length,0);
   const tiles=el("div",{class:"ctiles"});
   SVCS.forEach(k=>{ const st=SV[k], o=st.beds.filter(bedHasPatient).length, iso=st.beds.filter(isoBed);
     tiles.append(tile(CFG.utis[k].nome,o+" / "+st.beds.length,"Isolamento: "+iso.map(b=>String(bedNum(b)).padStart(2,"0")+(bedHasPatient(b)?" ocupado":" livre")).join(", "),k)); });
   tiles.append(tile("Total",oc.length+" / "+all.length,"leitos ocupados nas duas UTIs"),
-    tile("Alta prevista em 24 h",String(oc.filter(b=>b.gest.alta==="24h").length),"pacientes"));
+    tile("Alta prevista em 24 h",String(oc.filter(b=>b.gest.alta==="24h").length),"pacientes"),
+    tile("Pendências abertas",String(nAb),nUrg?nUrg+" urgente"+(nUrg>1?"s":""):"nenhuma urgente",nUrg?"urg":""));
   body.append(tiles);
   const box=(t,...kids)=>el("div",{class:"cbox"},el("h3",{},t),...kids);
   const li=(b,extra)=>el("li",{},el("button",{type:"button",class:"clink",onclick:()=>abrirLeito(b.id)},el("b",{},nm(b))," · "+(b.nome||"(sem nome)")),extra?el("span",{class:"hint",style:"margin:0 0 0 6px"},extra):null);
   const ul=(arr,fx)=>arr.length?el("ul",{class:"clist"},...arr.map(b=>li(b,fx&&fx(b)))):el("p",{class:"hint",style:"margin:0"},"Nenhum.");
-  /* altas previstas */
+  /* pendências abertas primeiro: é o que o coordenador resolve na hora */
+  const comP=oc.filter(b=>b.pend.some(x=>!x.ok)).sort((a,b)=>(b.pend.some(x=>!x.ok&&x.urg)?1:0)-(a.pend.some(x=>!x.ok&&x.urg)?1:0));
+  body.append(box("Pendências abertas",comP.length?el("div",{class:"cpend"},...comP.map(b=>el("div",{class:"cpend-i"},li(b),pendBox(b,{compact:true,hideDone:true,re:renderCoord})))):el("p",{class:"hint",style:"margin:0"},"Nenhuma pendência aberta.")));
   const cols=[["24h","24 h"],["48h","48 h"],["72h","72 h"],["ind","Indefinida"],["","Sem estimativa"]];
   body.append(box("Altas previstas",el("div",{class:"ccols"},...cols.map(([k,l])=>el("div",{},el("div",{class:"ccol-h"},l+" ("+oc.filter(b=>(b.gest.alta||"")===k).length+")"),ul(oc.filter(b=>(b.gest.alta||"")===k)))))));
-  /* permanência */
   const perm=oc.filter(b=>b.admissao).sort((a,b)=>(a.admissao||"").localeCompare(b.admissao||""));
   body.append(box("Permanência na UTI (mais longa primeiro)",ul(perm,b=>"D"+diasUti(b)+" · admissão "+fmtDate(b.admissao,true)+((b.gest.justif||[]).length?" · "+b.gest.justif.join(", "):""))));
-  /* cirurgia cardíaca na UTI Branca */
   const br=SV.branca.beds.filter(bedHasPatient).filter(b=>cirHas(b));
   const sn2=v=>v==="sim"?"Sim":v==="nao"?"Não":"—";
-  body.append(box("Cirurgia cardíaca · UTI Branca",br.length?el("table",{class:"ctab"},
+  body.append(box("Cirurgia cardíaca · UTI Branca",br.length?el("div",{class:"ctab-w"},el("table",{class:"ctab"},
     el("thead",{},el("tr",{},...["Leito","Revascularização","Reunião familiar","Ciente e concorda","Termos assinados"].map(h=>el("th",{},h)))),
-    el("tbody",{},...br.map(b=>{ const R=b.cir; const pend=v=>v!=="sim"?" cpend":"";
+    el("tbody",{},...br.map(b=>{ const R=b.cir; const pc=v=>v!=="sim"?"cpend":"";
       return el("tr",{},el("td",{},el("button",{type:"button",class:"clink",onclick:()=>abrirLeito(b.id)},el("b",{},nm(b))," · "+(b.nome||""))),
         el("td",{},(R.rev.status||"—")+(R.rev.data?" · "+fmtDate(R.rev.data):"")),
-        el("td",{class:pend(R.reuniao.feita).trim()},sn2(R.reuniao.feita)+(R.reuniao.feita==="sim"&&R.reuniao.data?" · "+fmtDate(R.reuniao.data):"")),
-        el("td",{class:pend(R.ciente).trim()},sn2(R.ciente)),el("td",{class:pend(R.termos).trim()},sn2(R.termos))); }))):el("p",{class:"hint",style:"margin:0"},"Nenhum paciente com programação de cirurgia cardíaca.")));
-  /* pendências abertas */
-  const comP=oc.filter(b=>b.pend.some(x=>!x.ok));
-  body.append(box("Pendências abertas",comP.length?el("ul",{class:"clist"},...comP.map(b=>li(b,b.pend.filter(x=>!x.ok).map(x=>x.t).join("; ")))):el("p",{class:"hint",style:"margin:0"},"Nenhuma pendência aberta.")));
-  /* alertas */
+        el("td",{class:pc(R.reuniao.feita)},sn2(R.reuniao.feita)+(R.reuniao.feita==="sim"&&R.reuniao.data?" · "+fmtDate(R.reuniao.data):"")),
+        el("td",{class:pc(R.ciente)},sn2(R.ciente)),el("td",{class:pc(R.termos)},sn2(R.termos))); })))):el("p",{class:"hint",style:"margin:0"},"Nenhum paciente com programação de cirurgia cardíaca.")));
   const alD=oc.filter(b=>devAlerts(b,todayISO()).length), alP=oc.filter(b=>precTxt(b));
   body.append(box("Alertas",el("div",{class:"ccols two"},
     el("div",{},el("div",{class:"ccol-h"},"Dispositivos com mais de "+ALERT_DIAS+" dias"),ul(alD,b=>devAlerts(b,todayISO()).map(x=>x.l+" D"+x.d).join(", "))),
     el("div",{},el("div",{class:"ccol-h"},"Pacientes em precaução"),ul(alP,b=>precTxt(b).toLowerCase())))));
 }
 function renderCoord(){
+  if(view!=="coord") return;
   const tabs=$("#cTabs"); tabs.innerHTML="";
   tabs.append(seg("Painel dos leitos",CO.tab==="painel",()=>{ CO.tab="painel"; renderCoord(); }),seg("Gestão das UTIs",CO.tab==="gestao",()=>{ CO.tab="gestao"; renderCoord(); }));
   const body=$("#coordBody"); body.innerHTML="";
   if(CO.tab==="painel") coordPainel(body); else coordGestao(body);
-  body.append(el("p",{class:"hint",style:"margin:18px 0 0"},"Atualiza sozinho quando alguém altera um leito. Toque em um leito para abrir o passômetro dele."));
+  body.append(el("p",{class:"hint",style:"margin:18px 0 0"},"Atualiza sozinho quando alguém altera um leito. Riscar e acrescentar pendências aqui grava direto no passômetro do leito."));
 }
+let _phone=null; window.addEventListener("resize",()=>{ const p=isPhone(); if(p===_phone) return; _phone=p; if(view==="coord"&&!document.querySelector(".overlay")) renderCoord(); });
 function importBackup(file){
   if(!file) return;
   const r=new FileReader();
@@ -1729,7 +1907,7 @@ function unionList(a,b){
   return out.sort((x,y)=>x.localeCompare(y,"pt-BR",{sensitivity:"base"}));
 }
 function editingNow(){
-  const a=document.activeElement; return !!(a&&$("#editor").contains(a)&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName));
+  const a=document.activeElement; return !!(a&&($("#editor").contains(a)||$("#coord").contains(a))&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName));
 }
 function setNet(up,stamp){ setNet0(up,stamp); mirrorMsg(); }
 function setNet0(up,stamp){
@@ -2015,6 +2193,7 @@ async function init(){
   $("#bNovo").onclick=novoPlantao; $("#bPrint").onclick=doPrint; $("#bWord").onclick=doWord;
   $("#bMenu").onclick=()=>showView(voltarCoord?"coord":"hub"); $("#hubLogoBtn").onclick=logoModal;
   $("#cMenu").onclick=()=>showView("hub");
+  $("#fabPend").onclick=()=>{ const b=isSvc(view)&&S.beds.find(x=>x.id===selected); if(b) pendAddModal(b,()=>{}); };
   showView("hub");
 }
 init();
